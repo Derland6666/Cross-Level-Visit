@@ -1,0 +1,29 @@
+{
+  "geode": "3.0.0",
+  "id": "derland.cross_level_visit",
+  "name": "Cross-Level Visit",
+  "version": "1.0.0",
+  "developer": "Derland6666",
+  "description": "A custom trigger that allows players to teleport between levels instantly. Use the 'Cross-Level Teleport' trigger and set a target level ID to teleport.",
+  "repository": "https://github.com/Derland6666/Cross-Level-Visit",
+  "dependencies": [],
+  "settings": {
+    "enableTeleportEffect": {
+      "name": "Enable Teleport Effect",
+      "description": "Show a transition effect when teleporting",
+      "type": "bool",
+      "default": true
+    },
+    "enableDebugLogging": {
+      "name": "Enable Debug Logging",
+      "description": "Log teleport events to console",
+      "type": "bool",
+      "default": false
+    }
+  },
+  "gd": {
+    "win": true,
+    "mac": true,
+    "android": true
+  }
+}
