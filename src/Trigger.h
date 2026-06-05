@@ -22,17 +22,24 @@ public:
 
     /**
      * @brief Check if a trigger is a cross-level teleport trigger
-     * @param triggerID The trigger ID to check
+     * @param trigger Pointer to the trigger object
      * @return true if it's a cross-level teleport trigger
      */
-    static bool isCrossLevelTrigger(int triggerID);
+    static bool isCrossLevelTrigger(gd::Trigger* trigger);
 
     /**
      * @brief Get the target level ID from trigger data
-     * @param triggerID The trigger ID
+     * @param trigger Pointer to the trigger object
      * @return The target level ID, -1 if invalid
      */
-    static int getTargetLevelID(int triggerID);
+    static int getTargetLevelID(gd::Trigger* trigger);
+
+    /**
+     * @brief Validate target level ID
+     * @param levelID The level ID to validate
+     * @return true if valid, false otherwise
+     */
+    static bool validateLevelID(int levelID);
 
     /**
      * @brief Register the trigger with Geometry Dash
@@ -42,15 +49,21 @@ public:
 
     /**
      * @brief Handle trigger activation event
-     * @param triggerID The ID of the activated trigger
-     * @param levelID The target level ID
+     * @param trigger Pointer to the activated trigger
      */
-    static void onTriggerActivated(int triggerID, int levelID);
+    static void onTriggerActivated(gd::Trigger* trigger);
 
-private:
+    /**
+     * @brief Utility function to log trigger information for debugging
+     * @param trigger Pointer to the trigger object
+     */
+    static void logTriggerInfo(gd::Trigger* trigger);
+
+public:
     static const int TRIGGER_TYPE_ID;
     static const std::string TRIGGER_NAME;
-    
+
+private:
     // Private constructor - static class only
     CrossLevelTrigger() = delete;
 };
